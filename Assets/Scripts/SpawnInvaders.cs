@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SpawnInvaders : MonoBehaviour
 {
-    [SerializeField]
-    GameObject invasorA;
 
     [SerializeField]
-    GameObject invasorB;
+    GameObject [] invasores;
+
 
     [SerializeField]
-    GameObject invasorC;
+    GameObject[] invasoresIndestrutiveis;
+        
 
     [SerializeField]
     int nInvasores = 7;
@@ -22,6 +22,17 @@ public class SpawnInvaders : MonoBehaviour
     [SerializeField]
     float yMin = -0.5f;
 
+    [SerializeField]
+    float xInc = 1f;
+
+    [SerializeField]
+    float Yinc = 0.5f;
+
+    [SerializeField]
+    float probabilidadeDeIndestrutivel = 0.15f;
+
+
+
 
 
     void Awake()
@@ -31,35 +42,32 @@ public class SpawnInvaders : MonoBehaviour
          */
 
         float y = yMin;
-        float x = xMin;
-        for (int i = 1; i <= nInvasores * 2 ; i += 1)
+        for (int line = 0 ; line < invasores.Length ;  line++)
 
         {
-
-            GameObject newInvader = Instantiate(invasorA, transform);
-            newInvader.transform.position = new Vector3(x, y , 0f);
-           
- 
-            GameObject newInvaderB = Instantiate(invasorB, transform);
-            newInvaderB.transform.position = new Vector3(x, 1f + y , 0f);
-
-            GameObject newInvaderC = Instantiate(invasorC, transform);
-            newInvaderC.transform.position = new Vector3(x, 1.5f,  0f);
-
-
-            x += 1;
-
-            if (i == nInvasores)
+            float x = xMin;
+            for (int i = 1; i <= nInvasores; i++)
             {
-                x = xMin;
-                y += 0.5f;
-            
+                GameObject normalOuIndstrutivel;
+                if(Random.value <= probabilidadeDeIndestrutivel)
+                {
 
+                    normalOuIndstrutivel = invasoresIndestrutiveis [line];
+
+                } else
+                {
+                    normalOuIndstrutivel = invasores [line];
+                }
+
+                GameObject newInvader = Instantiate (normalOuIndstrutivel, transform);
+                newInvader.transform.position = new Vector3(x, y, 0f);
+                x += xInc;  
 
             }
-           
-
+            y += Yinc; 
         }
+
+
     }   
 }
 

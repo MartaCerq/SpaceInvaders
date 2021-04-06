@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - disparodanave
+  - disparodoinvasor
+  - destrutivel
+  - indestrutivel
   layers:
   - Default
   - TransparentFX
@@ -13,10 +17,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Invasores
+  - Naveamiga
+  - Fogoinvasores
+  - Fogoamigo
   - 
   - 
   - 
