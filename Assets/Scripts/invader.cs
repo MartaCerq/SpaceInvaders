@@ -27,6 +27,7 @@ public class invader : MonoBehaviour
     if (tag == "destrutivel")
         {
             TempoquePassou += Time.deltaTime;
+            Random.Range(cadencia -1, cadencia + 1);
             if (TempoquePassou >= cadencia)
             {
                 Instantiate(fire, transform.position, transform.rotation);
