@@ -31,11 +31,6 @@ public class SpawnInvaders : MonoBehaviour
     [SerializeField]
     float probabilidadeDeIndestrutivel = 0.15f;
 
-    float tempo = 0f;
-
-    bool a = false;
-
-    int Tempoquepassou = 2;
 
 
 
@@ -80,76 +75,6 @@ public class SpawnInvaders : MonoBehaviour
 
       
     }
-
-    private void Update()
-    {
-
-
-        
-
-        Vector3 Aux = transform.position;
-
-    
-
-        transform.position = Aux;
-
-
-        tempo += Time.deltaTime ;
-
-
-
-
-
-        if (a == false && tempo >= 2f ) // 0.5 para a direita
-        {
-            Aux.x += 0.5f;
-
-            transform.position = Aux;
-
-            a = true;
-
-           
-
-        }
-
-
-
-
-        if ( tempo >= 2f ) // 0.5 para a esquerda
-        {
-
-            Aux.x -= 0.5f;
-
-            transform.position = Aux;
-
-            tempo = 0;
-
-            a = false;
-
-
-        }
-
-
-        
-
-        
-        
- 
-
-       
-
-
-
-
-
-
-
-    }
-
-
-
-
-
 
 
 

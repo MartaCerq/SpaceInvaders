@@ -449,7 +449,7 @@ PrefabInstance:
     - target: {fileID: 4177391959662885942, guid: c3074123bbcbc274a8714a91b1d2053e,
         type: 3}
       propertyPath: NumerodeVidas
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4177391959662885945, guid: c3074123bbcbc274a8714a91b1d2053e,
         type: 3}
